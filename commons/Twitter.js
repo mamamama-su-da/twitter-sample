@@ -1,5 +1,5 @@
-import '../shim.js' //TODO パスの指定をなんとかしたい
-import {Hmac} from 'react-native-crypto';
+import HmacSHA1 from 'crypto-js/hmac-sha1';
+import Base64 from 'crypto-js/enc-base64';
 
 export default class {
   constructor(options) {
@@ -130,7 +130,7 @@ export default class {
     const message = encodeURIComponent(method)
       + '&' + encodeURIComponent(url)
       + '&' + encodeURIComponent(this._toQueryString(Object.assign({}, oauthParams, params)));
-    const signature = Hmac('sha1', secret).update(message).digest('base64');
+    const signature = Base64.stringify(HmacSHA1(message, secret));
 
     // headerに設定するために形に整える
     return this._toQueryString(Object.assign({}, oauthParams, {
@@ -149,7 +149,7 @@ export default class {
     queryString.split(delimiter).forEach(item => {
       const pair = item.split('=');
       obj[decodeURIComponent(pair[0])] = (decodeURIComponent(pair[1] || ''));
-    })
+    });
     return obj;
   }
 }
