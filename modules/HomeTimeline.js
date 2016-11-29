@@ -35,7 +35,7 @@ export default class HomeTimeline extends Component {
     let params;
     if (this.rawListData.length) {
       params = {
-        since_id: this.rawListData[0].id + 1
+        since_id: this.rawListData[0].id
       };
     }
 
@@ -61,7 +61,7 @@ export default class HomeTimeline extends Component {
         if (tweets.length) {
           return tweets.map((tweet => {
             return {
-              id: tweet.id,
+              id: tweet.id_str,
               profileImageUrl: tweet.user.profile_image_url_https,
               userName: tweet.user.name,
               userId: tweet.user.screen_name,
