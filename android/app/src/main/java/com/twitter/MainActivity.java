@@ -1,9 +1,6 @@
 package com.twitter;
 
 import com.facebook.react.ReactActivity;
-import com.tradle.react.UdpSocketsModule;
-import com.peel.react.TcpSocketsModule;
-import com.bitgo.randombytes.RandomBytesPackage;
 
 public class MainActivity extends ReactActivity {
 
