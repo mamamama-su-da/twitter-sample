@@ -48,9 +48,11 @@ export default class HomeTimeline extends Component {
 
         this.setState({
           dataSource: this.state.dataSource.cloneWithRows(this.rawListData),
-          refreshing: false,
         });
       }
+      this.setState({
+        refreshing: false,
+      });
     });
   }
 
