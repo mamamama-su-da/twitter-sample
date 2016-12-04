@@ -7,8 +7,8 @@ import {
   NavigatorIOS,
   ActivityIndicator,
 } from 'react-native';
-import Query from '../commons/Query';
-import twitter from '../commons/TwitterManager';
+import Query from 'Twitter/src/commons/Query';
+import twitter from 'Twitter/src/commons/TwitterManager';
 
 export default class Login extends Component {
 

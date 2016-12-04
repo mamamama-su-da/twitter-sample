@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Text, TextInput, ScrollView, View, StyleSheet, AsyncStorage } from 'react-native';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
-import Button from '../components/Button';
-import twitter from '../commons/TwitterManager';
+import Button from 'Twitter/src/components/Button';
+import twitter from 'Twitter/src/commons/TwitterManager';
 
 export default class Post extends Component {
 

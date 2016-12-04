@@ -4,8 +4,8 @@ import {
   View,
   AsyncStorage,
 } from 'react-native';
-import twitter from '../commons/TwitterManager';
-import Button from '../components/Button';
+import twitter from 'Twitter/src/commons/TwitterManager';
+import Button from 'Twitter/src/components/Button';
 
 export default class SubMenu extends Component {
 

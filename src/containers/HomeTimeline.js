@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import twitter from '../commons/TwitterManager';
-import Tweet from '../components/Tweet';
+import twitter from 'Twitter/src/commons/TwitterManager';
+import Tweet from 'Twitter/src/components/Tweet';
 import {
   StyleSheet,
   ListView,

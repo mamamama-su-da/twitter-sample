@@ -1,6 +1,6 @@
 import { AsyncStorage, } from 'react-native';
-import { twitterApp } from '../config/config.json';
-import Twitter from '../commons/Twitter';
+import { twitterApp } from 'Twitter/config/config.json';
+import Twitter from './Twitter';
 
 const client = new Twitter({
   consumer_key: twitterApp.consumerKey,

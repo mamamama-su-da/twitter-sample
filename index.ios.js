@@ -11,10 +11,10 @@ import {
   AsyncStorage,
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
-import HomeTimeline from './modules/HomeTimeline';
-import SubMenu from './modules/SubMenu';
-import Post from './modules/Post';
-import Login from './modules/Login';
+import HomeTimeline from './src/containers/HomeTimeline';
+import SubMenu from './src/containers/SubMenu';
+import Post from './src/containers/Post';
+import Login from './src/containers/Login';
 
 class Twitter extends Component {
   constructor(props) {
