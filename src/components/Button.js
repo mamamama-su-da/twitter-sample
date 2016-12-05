@@ -8,13 +8,15 @@ import {
 
 export default class Button extends Component {
 
+  static propTypes = {
+    style: React.PropTypes.object,
+    onPress: React.PropTypes.func,
+  };
+
   render() {
-    var colorStyle = {
-      // color: this.state.active ? '#fff' : '#000',
-    };
     return (
       <Text
-        style={[styles.button, this.props.style, colorStyle]}
+        style={[styles.button, this.props.style]}
         onPress={this.props.onPress}
       >
         {this.props.children}
@@ -29,6 +31,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 5,
     justifyContent: 'center',
+    alignSelf: 'center',
     overflow: 'hidden',
     color: '#000000',
   },
