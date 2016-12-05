@@ -1,53 +1,48 @@
 import React, {Component} from 'react';
 import twitter from 'Twitter/src/commons/TwitterManager';
-import Tweet from 'Twitter/src/components/Tweet';
 import {
   StyleSheet,
-  ListView,
   ScrollView,
   View,
-  Text,
-  ActivityIndicator,
   RefreshControl,
-  AsyncStorage,
 } from 'react-native';
+import Tweets from 'Twitter/src/components/Tweets';
 
 export default class HomeTimeline extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataSource: new ListView.DataSource({rowHasChanged: (r1, r2) => r1.id !== r2.id}),
+      tweets: [],
       refreshing: false,
     };
-    this.rawListData = [];
   }
 
   componentDidMount() {
     this._loadTimeline().then((loadedTweets) => {
-      this.rawListData = loadedTweets;
       this.setState({
-        dataSource: this.state.dataSource.cloneWithRows(this.rawListData),
+        tweets: loadedTweets,
       });
     });
   }
 
   _onRefresh() {
+    let {tweets} = this.state;
     let params;
-    if (this.rawListData.length) {
+    if (tweets.length) {
       params = {
-        since_id: this.rawListData[0].id
+        since_id: tweets[0].id
       };
     }
 
     this.setState({refreshing: true});
     this._loadTimeline(params).then((loadedTweets) => {
       if (loadedTweets.length) {
-        const newListData = this.rawListData.slice();
-        newListData.unshift(...loadedTweets);
-        this.rawListData = newListData;
+
+        const newTweets = tweets.slice();
+        newTweets.unshift(...loadedTweets);
 
         this.setState({
-          dataSource: this.state.dataSource.cloneWithRows(this.rawListData),
+          tweets: newTweets,
         });
       }
       this.setState({
@@ -78,11 +73,6 @@ export default class HomeTimeline extends Component {
   }
 
   render() {
-    let indicator;
-    if (!this.state.dataSource.rowIdentities.length) {
-      indicator = <ActivityIndicator style={styles.indicator}/>;
-    }
-
     return (
       <ScrollView
         style={styles.base}
@@ -93,35 +83,16 @@ export default class HomeTimeline extends Component {
           />
         }
       >
-        {indicator}
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={(rowData) => <Tweet key={rowData.id} {...rowData} />}
-          renderSeparator={this._renderSeparator}
-          initialListSize={200}
-          pageSize={20}
-          scrollRenderAheadDistance={500}
+        <Tweets
+          tweets={this.state.tweets}
         />
       </ScrollView>
     );
-  }
-
-  _renderSeparator(sectionID, rowID, adjacentRowHighlighted) {
-    return <View
-      key={`${sectionID}-${rowID}`}
-      style={{
-        height: 1,
-        backgroundColor: '#E1E8ED',
-      }}
-    />;
   }
 }
 
 const styles = StyleSheet.create({
   base: {
     backgroundColor: '#EEEEEE',
-  },
-  indicator: {
-    margin: 10,
   },
 });
