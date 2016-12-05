@@ -9,7 +9,7 @@ import Tweet from 'Twitter/src/components/Tweet';
 
 export default class Tweets extends Component {
   static propTypes = {
-    tweets: React.PropTypes.array,
+    tweets: React.PropTypes.array.isRequired,
   }
 
   constructor(props) {
@@ -38,10 +38,7 @@ export default class Tweets extends Component {
     return (
       <View
         key={`${sectionID}-${rowID}`}
-        style={{
-          height: 1,
-          backgroundColor: '#E1E8ED',
-        }}
+        style={styles.separator}
       />
     );
   }
@@ -50,5 +47,9 @@ export default class Tweets extends Component {
 const styles = StyleSheet.create({
   indicator: {
     margin: 10,
+  },
+  separator: {
+    height: 1,
+    backgroundColor: '#E1E8ED',
   },
 });
