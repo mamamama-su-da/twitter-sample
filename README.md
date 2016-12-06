@@ -13,5 +13,4 @@ twitter client
 }
 ```
 - `npm install`
-- `rnpm link`
 - `react-native run-ios`
