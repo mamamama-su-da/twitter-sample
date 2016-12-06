@@ -47,8 +47,10 @@ export default class Post extends Component {
             {textCount}
           </Text>
           <Button
-            style={styles.sendButton}
+            containerStyle={styles.sendButtonContainer}
+            textStyle={styles.sendButtonText}
             onPress={this._postTweet.bind(this)}
+            disabled={!this.state.text.length}
           >
             ツイート
           </Button>
@@ -81,14 +83,11 @@ const styles = StyleSheet.create({
     color: '#657786',
     marginRight: 10,
   },
-  sendButton: {
+  sendButtonContainer: {
     backgroundColor: '#1DA1F2',
+    borderColor: 'rgba(0,0,0,0)',
+  },
+  sendButtonText: {
     color: '#FFFFFF',
-    borderRadius: 5,
-    borderWidth: 0,
-    paddingTop: 10,
-    paddingBottom: 10,
-    paddingLeft: 15,
-    paddingRight: 15,
-  }
+  },
 });
