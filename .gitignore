@@ -42,4 +42,4 @@ android/keystores/debug.keystore
 
 # App
 #
-config/config.json
+src/config/config.json

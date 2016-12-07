@@ -1,5 +1,5 @@
 import { AsyncStorage, } from 'react-native';
-import { twitterApp } from 'Twitter/config/config.json';
+import { twitterApp } from 'Twitter/src/config/config.json';
 import Twitter from './Twitter';
 
 const client = new Twitter({

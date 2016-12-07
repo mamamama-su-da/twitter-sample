@@ -15,6 +15,15 @@ import moment from 'moment';
 
 export default class Tweet extends Component {
 
+  /*
+     <Tweet
+       profileImageUrl="https://dummyimage.com/600x400/000/fff"
+       userName="ニクリーチ"
+       userId="29reach"
+       time="2016/12/08 18:00:00"
+       text="肉食べたい"
+     />
+   */
   static propTypes = {
     profileImageUrl: React.PropTypes.string.isRequired,
     userName: React.PropTypes.string.isRequired,

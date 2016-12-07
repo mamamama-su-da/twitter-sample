@@ -8,6 +8,26 @@ import {
 import Tweet from 'Twitter/src/components/Tweet';
 
 export default class Tweets extends Component {
+  /*
+    let tweets = [
+      {
+        profileImageUrl: 'https://dummyimage.com/600x400/000/fff',
+        userName: 'ニクリーチ',
+        userId: '29reach',
+        time: '2016/12/08 18:00:00',
+        text: '肉食べたい',
+      },
+      {
+        profileImageUrl: 'https://dummyimage.com/500x300/000/fff',
+        userName: 'サクリーチ',
+        userId: '39reach',
+        time: '2016/12/09 18:00:00',
+        text: '桜食べたい',
+      },
+    ];
+
+    <Tweets tweets={tweets} />
+   */
   static propTypes = {
     tweets: React.PropTypes.array.isRequired,
   }
