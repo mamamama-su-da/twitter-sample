@@ -48,7 +48,6 @@ export default class Login extends Component {
         twitter.options.access_token_key = accessToken.oauth_token;
         twitter.options.access_token_secret = accessToken.oauth_token_secret;
         AsyncStorage.setItem('access_token', JSON.stringify(accessToken)).then(() => {
-          twitter
           this.props.onLoginComplete();
         });
       });
@@ -59,7 +58,6 @@ export default class Login extends Component {
           style: styles.indicator,
         }
       });
-      return true;
     }
     return true;
   }
