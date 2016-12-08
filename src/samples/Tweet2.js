@@ -63,7 +63,7 @@ export default class extends Component {
     }
 
     return (
-      <View style={{ paddingTop: 20 }}>
+      <View style={{ marginTop: 20 }}>
         {content}
       </View>
     );

@@ -52,7 +52,7 @@ export default class extends Component {
   render() {
     return (
       <ScrollView
-        style={{ paddingTop: 20, backgroundColor: '#EEEEEE' }}
+        style={{ marginTop: 20, backgroundColor: '#EEEEEE' }}
       >
         <Tweets tweets={this.state.tweets} />
       </ScrollView>

@@ -7,7 +7,7 @@ import {
 export default class extends Component {
   render() {
     return (
-      <View style={{ paddingTop: 20 }}>
+      <View style={{ marginTop: 20 }}>
         <Text>Hello World!!</Text>
       </View>
     );
