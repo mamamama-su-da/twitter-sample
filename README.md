@@ -3,7 +3,7 @@ twitter client
 
 # Getting Started
 - Add config for Twitter API.
-`config/config.json`
+`src/config/config.json`
 ```json
 {
   "twitterApp": {
